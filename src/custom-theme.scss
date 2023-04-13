@@ -1,0 +1,58 @@
+@import '~@nebular/theme/styles/theming';
+@import '~@nebular/theme/styles/themes/dark';
+
+
+$nb-themes: nb-register-theme((
+
+  color-primary-100: #D4E0F8,
+  color-primary-200: #ACC2F1,
+  color-primary-400: #516AAF,
+  color-primary-300: #7A95D7,
+  color-primary-500: #23387B,
+  color-primary-600: #192A69,
+  color-primary-700: #111F58,
+  color-primary-800: #0B1547,
+  color-primary-900: #060E3B,
+
+  color-success-100: #DBF8D1,
+  color-success-200: #B2F1A6,
+  color-success-300: #79D772,
+  color-success-400: #48B04B,
+  color-success-500: #1B7C26,
+  color-success-600: #136A25,
+  color-success-700: #0D5924,
+  color-success-800: #084721,
+  color-success-900: #053B1F,
+
+  color-info-100: #D0E1FD,
+  color-info-200: #A3C2FC,
+  color-info-300: #749DF6,
+  color-info-400: #507EED,
+  color-info-500: #1B50E2,
+  color-info-600: #133DC2,
+  color-info-700: #0D2DA2,
+  color-info-800: #081F83,
+  color-info-900: #05156C,
+
+  color-warning-100: #FBF6C9,
+  color-warning-200: #F8EC94,
+  color-warning-300: #EAD75D,
+  color-warning-400: #D5BD35,
+  color-warning-500: #BA9B00,
+  color-warning-600: #9F8200,
+  color-warning-700: #856A00,
+  color-warning-800: #6B5400,
+  color-warning-900: #594400,
+
+  color-danger-100: #F9DACE,
+  color-danger-200: #F3B0A0,
+  color-danger-300: #DC776C,
+  color-danger-400: #BA4543,
+  color-danger-500: #8C151E,
+  color-danger-600: #780F20,
+  color-danger-700: #640A21,
+  color-danger-800: #510620,
+  color-danger-900: #43041F
+
+), custom-theme, dark);
+
