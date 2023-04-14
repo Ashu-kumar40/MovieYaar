@@ -52,12 +52,13 @@ export default function Homepage() {
                 </h1>
 
                 <div className="poster_runtime">
-                    <span className="ReleaseDate">
-                        {movie ? movie.release_date : ""}
-                    </span>
+                  <span className="ReleaseDate">
+                    {movie ? movie.release_date : ""}
+                  </span>
 
                   <span className="poster_rating">
-                    <i class="fa-solid fa-star"
+                    <i
+                      class="fa-solid fa-star"
                       style={{ color: "#ffe042" }}
                     ></i>{" "}
                     {movie ? movie.vote_average : ""}
@@ -73,7 +74,13 @@ export default function Homepage() {
         </Carousel>
       </div>
 
-      <Card />
+      {/* Rendering Popular movies */}
+
+      <div className="now-Playing">
+        {nowPlaying.map((movie) => (
+          <Card movie={movie} />
+        ))}
+      </div>
     </>
   );
 }
