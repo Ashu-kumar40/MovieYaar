@@ -64,6 +64,19 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   background-color: var(--color-primary-900);
+  
+}
+
+*::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+}
+*::-webkit-scrollbar-track{
+  background: var(--color-primary-700);
+}
+*::-webkit-scrollbar-thumb{
+  background: var(--color-primary-200);
+  border-radius: 10px;
 }
 
 /* setting up images */
@@ -80,7 +93,9 @@ button,
 select {
   font: inherit;
 }
-
+a{
+  text-decoration: none;
+}
 /* Remove animation for people who have turned them off */
 @media (prefers-reduced-motion: reduce) {
 

@@ -75,12 +75,18 @@ export default function Homepage() {
       </div>
 
       {/* Rendering Popular movies */}
-
-      <div className="now-Playing">
-        {nowPlaying.map((movie) => (
-          <Card movie={movie} />
-        ))}
+      
+      <div className="list-type">
+        <h1 className="list-type-heading">NOW PLAYING
+        </h1>
+        <div className="now-Playing">
+          {nowPlaying.map((movie) => (
+            <Card movie={movie} />
+          ))}
+        </div>
       </div>
+      
+      
     </>
   );
 }

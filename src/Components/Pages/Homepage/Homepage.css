@@ -28,3 +28,20 @@
 .poster_desc{
     margin-top: 1em;
 }
+
+.list-type{
+    height: 80vh;
+}
+.now-Playing{
+    display: flex;
+    gap: 1.5rem;
+    padding: 50px;
+    margin: 0 auto;
+    overflow-x: scroll;
+}
+
+.list-type-heading{
+    font-size: 2rem;
+    margin: 50px 50px 0 50px;
+    color: white;
+}
