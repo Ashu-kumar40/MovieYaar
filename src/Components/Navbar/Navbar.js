@@ -17,7 +17,7 @@ export default function Navbar() {
         </div>
         <div className="links">
           <Link to="movie/popular">Popular</Link>
-          <Link to="movie/tranding">Tranding</Link>
+          <Link to="movie/top_rated">Top Rated</Link>
           <Link to="movie/upcoming">Upcoming</Link>
         </div>
       </div>

@@ -10,9 +10,9 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route index element={<Homepage />}></Route>
-          <Route path="movie/:id" element={<h1>This is movie details</h1>} />
+          <Route path='/' element={<Homepage />}></Route>
           <Route path="movie/:type" element={<MovieList />} />
+          <Route path="movie/:id" element={<h1>This is movie details</h1>} />
           <Route path="/*" element={<h1>Error: page not found</h1>} />
         </Routes>
       </Router>

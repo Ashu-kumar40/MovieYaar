@@ -1,0 +1,41 @@
+/* .container {
+    width: 100%;
+    height: 100px;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  
+  .container > div {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin-right: 10px;
+    background-color: #ccc;
+  }
+  
+  button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button.left {
+    left: 10px;
+  }
+  
+  button.right {
+    right: 10px;
+  }
+   */

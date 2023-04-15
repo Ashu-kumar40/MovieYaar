@@ -10,6 +10,7 @@
 
 .posterDetails{
     /* height: 200px; */
+    width: 100%;
     padding: 50px;
     text-align: left;
     position: absolute;
@@ -32,6 +33,14 @@
 .list-type{
     height: 80vh;
 }
+
+.heading-see-all-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 50px 50px 0 50px;
+    color: white;
+}
 .now-Playing{
     display: flex;
     gap: 1.5rem;
@@ -40,8 +49,10 @@
     overflow-x: scroll;
 }
 
-.list-type-heading{
-    font-size: 2rem;
-    margin: 50px 50px 0 50px;
-    color: white;
+.see-all{
+    font-size: 1.2rem;
+    color: var(--color-primary-200);
+}
+.see-all:hover{
+    color: var(--color-primary-100);
 }

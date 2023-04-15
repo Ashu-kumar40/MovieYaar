@@ -6,7 +6,8 @@ import { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
-import Card from "../../MovieCard/Card";
+import HorizontalList from "../../MovieHorizontalList/HorizontalList";
+import HorizontalScroll from "../../Test";
 
 export default function Homepage() {
   const [nowPlaying, setNowPlaying] = useState([]);
@@ -19,6 +20,12 @@ export default function Homepage() {
       .then((res) => res.json())
       .then((data) => setNowPlaying(data.results));
   }, []);
+
+  
+  // defining local variable
+  // const popular = "POPULAR";
+  // const topRated = "TOP RATED";
+  // const upcoming = "Upcoming";
 
   return (
     <>
@@ -74,19 +81,28 @@ export default function Homepage() {
         </Carousel>
       </div>
 
-      {/* Rendering Popular movies */}
+      <HorizontalScroll />
+
+      {/* Rendering now playing movies */}
       
-      <div className="list-type">
-        <h1 className="list-type-heading">NOW PLAYING
-        </h1>
+      {/* <div className="list-type">
+        <div className='heading-see-all-box'>
+          <h1 className="list-type-heading">NOW PLAYING
+          </h1>
+          <Link className="see-all" to="movie/now_playing">See All</Link>
+        </div>
+        
         <div className="now-Playing">
           {nowPlaying.map((movie) => (
             <Card movie={movie} />
           ))}
         </div>
-      </div>
-      
-      
+      </div> */}
+
+      <HorizontalList movie_type={"now_playing"} />
+      <HorizontalList movie_type={"upcoming"} />
+      <HorizontalList movie_type={"popular"} />
+    
     </>
   );
 }

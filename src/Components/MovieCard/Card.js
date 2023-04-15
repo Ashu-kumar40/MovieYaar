@@ -22,7 +22,7 @@ export default function Card({ movie }) {
           <Loading />
         </div>
         :
-        <Link to={`movie/${movie.id}`}>
+        <Link to={`/movie/${movie.id}`}>
           <div className="card">
             <img
               className="cardImg"

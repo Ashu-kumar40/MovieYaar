@@ -18,6 +18,7 @@ export default function MovieList() {
   ), [type])
 
 
+
   // fetching the movies list
   const getData = () => {
     fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=${ApiKey}&language=en-US&page=1`)
@@ -27,12 +28,18 @@ export default function MovieList() {
 
   return (
     <>
-      <div className="movie-list">
-        <h1 className="list-type-heading">{(type ? type : "POPULAR").toUpperCase()}
+      <div className="movie-container">
+        
+        <h1 className="list-heading">{(type ? type : "POPULAR").toUpperCase()}
         </h1>
-        {movieList.map((movie) => (
-          <Card movie={movie} />
-        ))}
+
+        <div className="movie-list">
+        {
+          movieList.map((movie) => (
+            <Card movie={movie} />
+            ))
+        }
+        </div> 
       </div>
     </>
   );

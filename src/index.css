@@ -67,14 +67,14 @@ body {
   
 }
 
-*::-webkit-scrollbar{
+body::-webkit-scrollbar{
   width: 5px;
   height: 5px;
 }
-*::-webkit-scrollbar-track{
+body::-webkit-scrollbar-track{
   background: var(--color-primary-700);
 }
-*::-webkit-scrollbar-thumb{
+body::-webkit-scrollbar-thumb{
   background: var(--color-primary-200);
   border-radius: 10px;
 }
