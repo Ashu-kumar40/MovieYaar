@@ -7,7 +7,7 @@ export default function MovieList() {
 
   const [movieList, setMovieList] = useState([]);
   const {type} = useParams()
-  const ApiKey = "c546b3a17abcfc1c6c61807d1a0d0cf9";
+  const ApiKey = process.env.REACT_APP_API_KEY;
 
   useEffect(() => (
     getData()
@@ -36,7 +36,7 @@ export default function MovieList() {
         <div className="movie-list">
         {
           movieList.map((movie) => (
-            <Card movie={movie} />
+            <Card movie={movie} if=d />
             ))
         }
         </div> 

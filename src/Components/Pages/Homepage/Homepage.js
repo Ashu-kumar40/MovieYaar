@@ -7,11 +7,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
 import HorizontalList from "../../MovieHorizontalList/HorizontalList";
-import HorizontalScroll from "../../Test";
 
 export default function Homepage() {
   const [nowPlaying, setNowPlaying] = useState([]);
-  const ApiKey = "c546b3a17abcfc1c6c61807d1a0d0cf9";
+  const ApiKey = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     fetch(
@@ -80,8 +79,6 @@ export default function Homepage() {
           ))}
         </Carousel>
       </div>
-
-      <HorizontalScroll />
 
       {/* Rendering now playing movies */}
       

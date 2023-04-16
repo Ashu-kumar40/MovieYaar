@@ -22,8 +22,8 @@ export default function Card({ movie }) {
           <Loading />
         </div>
         :
-        <Link to={`/movie/${movie.id}`}>
-          <div className="card">
+        <Link to={`/movie/${movie.id}`} id={`${movie.id}`}>
+          <div  className="card">
             <img
               className="cardImg"
               src={`https://image.tmdb.org/t/p/original/${movie && movie.poster_path}`}>
