@@ -26,7 +26,8 @@ export default function Card({ movie }) {
           <div  className={styles.card}>
             <img
               className={styles.cardImg}
-              src={`https://image.tmdb.org/t/p/original/${movie && movie.poster_path}`}>
+              src={`https://image.tmdb.org/t/p/original/${movie && movie.poster_path}`}
+              alt={movie ? movie.original_title : "Img"}>
             </img>
 
             <div className={styles.movieDetails}>

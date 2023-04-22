@@ -18,7 +18,7 @@ export default function Homepage() {
     )
       .then((res) => res.json())
       .then((data) => setNowPlaying(data.results));
-  }, []);
+  }, [ApiKey]);
 
   
   // defining local variable
