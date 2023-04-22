@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import "./Card.css";
+import styles from "./Card.module.css";
 import Loading from "../Loading/Loading";
 import { Link } from "react-router-dom";
 
@@ -18,26 +18,26 @@ export default function Card({ movie }) {
       {
         isLoading
         ?
-        <div className="card">
+        <div className={styles.card}>
           <Loading />
         </div>
         :
-        <Link to={`/movie/${movie.id}`} id={`${movie.id}`}>
-          <div  className="card">
+        <Link to={`movie-details/${movie.id}`} key={`${movie.id}`}>
+          <div  className={styles.card}>
             <img
-              className="cardImg"
+              className={styles.cardImg}
               src={`https://image.tmdb.org/t/p/original/${movie && movie.poster_path}`}>
             </img>
 
-            <div className="movie-details">
-              <h1 className="title">{movie ? movie.original_title : " "}</h1>
+            <div className={styles.movieDetails}>
+              <h1 className={styles.title}>{movie ? movie.original_title : " "}</h1>
             
-              <div className="date-rating">
-                <span className="ReleaseDate">
+              <div className={styles.dateRating}>
+                <span className={styles.ReleaseDate}>
                   {movie ? movie.release_date : ""}
                 </span>
 
-                <span className="poster_rating">
+                <span className={styles.poster_rating}>
                   <i
                     class="fa-solid fa-star"
                     style={{ color: "#ffe042" }}>

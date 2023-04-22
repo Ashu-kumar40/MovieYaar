@@ -36,7 +36,7 @@ export default function MovieList() {
         <div className="movie-list">
         {
           movieList.map((movie) => (
-            <Card movie={movie} if=d />
+            <Card movie={movie}/>
             ))
         }
         </div> 

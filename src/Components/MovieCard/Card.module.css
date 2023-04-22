@@ -17,7 +17,7 @@
     transition: all 1s ease;
 }
 
-.movie-details{
+.movieDetails{
     display: flex;
     flex-direction: column;
     justify-content:flex-end;
@@ -30,7 +30,7 @@
     position: relative;
     transition: all 1s ease;
 }
-.cardImg:hover~.movie-details{
+.cardImg:hover~.movieDetails{
     transform: translateY(-150px);
     transition: all .5s ease;
 }
@@ -38,7 +38,7 @@
 .title{
     font-size: 1rem;
 }
-.date-rating{
+.dateRating{
     display: flex;
     justify-content: space-between;
 }

@@ -51,7 +51,7 @@ export default function Homepage() {
                 <h1 className="poster_title">
                   <Link
                     style={{ textDecoration: "none", color: "white" }}
-                    to={`/movie/${movie.id}`}
+                    to={`/movie-details/${movie.id}`}
                   >
                     {movie ? movie.original_title : ""}
                   </Link>
