@@ -22,7 +22,7 @@ export default function Card({ movie }) {
           <Loading />
         </div>
         :
-        <Link to={`movie-details/${movie.id}`} key={`${movie.id}`}>
+        <Link to={`/movie-details/${movie.id}`} key={`${movie.id}`}>
           <div  className={styles.card}>
             <img
               className={styles.cardImg}

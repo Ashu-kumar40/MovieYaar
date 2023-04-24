@@ -12,13 +12,10 @@ export default function HorizontalList({ movie_type }) {
     // fetching the movies list
     const getData = () => {
       setMovieType(movie_type);
-      fetch(
-        `https://api.themoviedb.org/3/movie/${
-          movieType ? movieType : "popular"
-        }?api_key=${ApiKey}&language=en-US&page=1`
+      fetch(`https://api.themoviedb.org/3/movie/${movieType ? movieType : "popular"}?api_key=${ApiKey}&language=en-US&page=1`
       )
-        .then((res) => res.json())
-        .then((data) => setMovieList(data.results));
+      .then((res) => res.json())
+      .then((data) => setMovieList(data.results));
     };
     getData();
   }, [movie_type, movieType, ApiKey]);
@@ -50,7 +47,7 @@ export default function HorizontalList({ movie_type }) {
               </svg>
             </button>
 
-            {movieList.map((movie) => (
+            {movieList?.map((movie) => (
               <Card movie={movie} />
             ))}
 

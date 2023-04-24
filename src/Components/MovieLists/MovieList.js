@@ -11,13 +11,10 @@ export default function MovieList() {
   useEffect(() => {
     // fetching the movies list
     const getData = () => {
-      fetch(
-        `https://api.themoviedb.org/3/movie/${
-          type ? type : "popular"
-        }?api_key=${ApiKey}&language=en-US&page=1`
+      fetch(`https://api.themoviedb.org/3/movie/${type ? type : "popular"}?api_key=${ApiKey}&language=en-US&page=1`
       )
-        .then((res) => res.json())
-        .then((data) => setMovieList(data.results));
+      .then((res) => res.json())
+      .then((data) => setMovieList(data.results));
     };
     getData();
   }, [ApiKey, type]);
@@ -30,7 +27,7 @@ export default function MovieList() {
         </h1>
 
         <div className="movie-list">
-          {movieList.map((movie) => (
+          {movieList?.map((movie) => (
             <Card movie={movie} />
           ))}
         </div>

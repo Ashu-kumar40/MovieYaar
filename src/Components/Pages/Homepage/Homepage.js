@@ -13,11 +13,15 @@ export default function Homepage() {
   const ApiKey = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiKey}&language=en-US&page=1`
-    )
-      .then((res) => res.json())
-      .then((data) => setNowPlaying(data.results));
+    async function fetchData() {
+      const request = await fetch(
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${ApiKey}&language=en-US&page=1`
+      );
+      const data = await request.json();
+      setNowPlaying(data.results);
+      console.log(data.results);
+    }
+    fetchData();
   }, [ApiKey]);
 
   
@@ -36,14 +40,14 @@ export default function Homepage() {
           infiniteLoop={true}
           showStatus={false}
         >
-          {nowPlaying.map((movie) => (
-            <div className="posterContainer">
+          {nowPlaying?.map((movie) => (
+            <div className="posterContainer" key={movie.id}>
               <div className="posterImg">
                 <img
                   src={`https://image.tmdb.org/t/p/original/${
                     movie && movie.backdrop_path
                   }`}
-                  alt={movie.title}
+                  alt={movie.original_title}
                 />
               </div>
 

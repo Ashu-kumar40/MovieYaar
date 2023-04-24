@@ -26,14 +26,8 @@ export default function MovieDetails() {
     <>
       <div className={styles.parentContainer}>
         <div className={styles.details}>
-          <img
-            className={styles.poster}
-            src={`https://image.tmdb.org/t/p/original/${
-              movie && movie.poster_path
-            }`}
-            alt=""
-          />
-          <div className="posterDetails">
+          <div className={styles.posterDetails}>
+            {console.log(movie)}
             <img
               className={styles.movieBanner}
               src={`https://image.tmdb.org/t/p/original/${
@@ -41,12 +35,65 @@ export default function MovieDetails() {
               }`}
               alt=""
             />
-            <h1 className="poster_title">
-              {movie ? movie.original_title : ""}
-            </h1>
+
+            <div className={styles.movie_details}>
+              <h1 className={styles.posterTitle}>
+                {movie ? movie.original_title : ""}
+              </h1>
+              <p className={styles.description}>
+                {movie ? movie.overview : ""}
+              </p>
+
+              <div className={styles.featureContainer}>
+                <span className={styles.movieFeatureHeading}>Genres: </span>
+                {movie &&
+                  movie.genres.map((genre) => (
+                    <div className={styles.movieFeature} key={genre.id}>
+                      {genre.name}
+                    </div>
+                  ))}
+              </div>
+
+              <div className={styles.featureContainer}>
+                <span className={styles.movieFeatureHeading}>Languages: </span>
+                {movie &&
+                  movie.spoken_languages.map((lang) => (
+                    <span className={styles.movieFeature} key={lang.id}>
+                      {lang.english_name}
+                    </span>
+                  ))}
+              </div>
+
+              <div className={styles.featureContainer}>
+                <div className={styles.releaseDate}>
+                  <span className={styles.movieFeatureHeading}>
+                    Release Date:{" "}
+                  </span>
+                  <span className={styles.movieFeature}>
+                    {movie ? movie.release_date : ""}
+                  </span>
+                </div>
+                <div className={styles.movie_rating}>
+                  <i class="fa-solid fa-star" style={{ color: "#ffe042" }}></i>{" "}
+                  {movie ? movie.vote_average.toFixed(1) : ""}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.about}>
+            <div className={styles.movieImg}>
+              <img
+                className={styles.poster}
+                src={`https://image.tmdb.org/t/p/original/${
+                  movie && movie.poster_path
+                }`}
+                alt=""
+              />
+            </div>
+            <div className="aboutMovie"></div>
           </div>
         </div>
-        <h1>Movie details {params.id && console.log(movie)}</h1>
       </div>
     </>
   );
