@@ -50,6 +50,8 @@
   --color-danger-700: #640A21;
   --color-danger-800: #510620;
   --color-danger-900: #43041F;
+
+  --normal-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {

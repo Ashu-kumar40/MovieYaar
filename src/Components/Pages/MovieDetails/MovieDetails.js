@@ -22,10 +22,39 @@ export default function MovieDetails() {
     // this window.scrollTo(0,0) is used to scroll to the top of the page
   }, [ApiKey, params.id]);
 
+  // Getting formatted runtime
+  const getFormattedTime = (time) => {
+    const hours = Math.floor(time / 60);
+    const min = time % 60;
+    return `${hours} hr ${min} min`
+  }
+
+  // Getting formatted date
+  const getFormattedDate = (date) => {
+    const months = {
+      1: "Jan",
+      2: "Feb",
+      3: "Mar",
+      4: "Apr",
+      5: "May",
+      6: "June",
+      7: "July",
+      8: "Aug",
+      9: "Sept",
+      10: "Oct",
+      11: "Nov",
+      12: "Dec",
+    };
+
+    const newDate = date.split("-");
+    const monthName = months[parseInt(newDate[1])];
+    return `${monthName} ${newDate[2]}, ${newDate[0]}`;
+  }
+
   return (
     <>
       <div className={styles.parentContainer}>
-        <div className={styles.details}>
+        <div className={styles.movieDetailsContainer}>
           <div className={styles.posterDetails}>
             {console.log(movie)}
             <img
@@ -40,9 +69,7 @@ export default function MovieDetails() {
               <h1 className={styles.posterTitle}>
                 {movie ? movie.original_title : ""}
               </h1>
-              <p className={styles.description}>
-                {movie ? movie.overview : ""}
-              </p>
+              <p className={styles.tagline}>{movie ? movie.tagline : ""}</p>
 
               <div className={styles.featureContainer}>
                 <span className={styles.movieFeatureHeading}>Genres: </span>
@@ -70,7 +97,8 @@ export default function MovieDetails() {
                     Release Date:{" "}
                   </span>
                   <span className={styles.movieFeature}>
-                    {movie ? movie.release_date : ""}
+                    {getFormattedDate(movie ? movie.release_date : "")}
+                    {/* {movie ? movie.release_date : ""} */}
                   </span>
                 </div>
                 <div className={styles.movie_rating}>
@@ -82,6 +110,8 @@ export default function MovieDetails() {
           </div>
 
           <div className={styles.about}>
+
+            {/* image */}
             <div className={styles.movieImg}>
               <img
                 className={styles.poster}
@@ -91,7 +121,66 @@ export default function MovieDetails() {
                 alt=""
               />
             </div>
-            <div className="aboutMovie"></div>
+             
+            {/* Details table */}
+            <div className={styles.aboutMovie}>
+              <div className={styles.overViewHeading}>
+                <h1>Overview</h1>
+                <p className={styles.description}>
+                  {movie ? movie.overview : ""}
+                </p>
+              </div>
+              
+              <div className={styles.detailsTable}>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td className={styles.tableHeading}>Status</td>
+                      <td className={styles.tableData}>
+                        {movie ? movie.status : ""}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className={styles.tableHeading}>Release Date</td>
+                      <td className={styles.tableData}>
+                      {getFormattedDate(movie ? movie.release_date : "")}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className={styles.tableHeading}>Budget</td>
+                      <td className={styles.tableData}>
+                        ${movie ? movie.budget : ""}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className={styles.tableHeading}>Revenue</td>
+                      <td className={styles.tableData}>
+                        ${movie ? movie.revenue : ""}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className={styles.tableHeading}>Runtime</td>
+                      <td className={styles.tableData}>
+                      {getFormattedTime(movie ? movie.runtime : "")}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className={styles.tableHeading}>Popularity</td>
+                      <td className={styles.tableData}>
+                        {movie ? movie.popularity.toFixed(1) : ""}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className={styles.tableHeading}>Vote Count</td>
+                      <td className={styles.tableData}>
+                        {movie ? movie.vote_count : ""}
+                      </td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </div>
