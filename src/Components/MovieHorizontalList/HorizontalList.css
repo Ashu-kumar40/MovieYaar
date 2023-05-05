@@ -1,6 +1,6 @@
-.list-type{
+/* .list-type{
     height: 80vh;
-}
+} */
 
 .heading-see-all-box{
     display: flex;
@@ -12,6 +12,7 @@
 .now-Playing{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
     padding: 50px;
     margin: 0 auto;
@@ -36,4 +37,8 @@
 
 .slide-btn:hover{
     background-color: var(--color-primary-200);
+}
+
+.slick-list{
+    width: 90vw;
 }

@@ -4,6 +4,8 @@ import Navbar from './Components/Navbar/Navbar';
 import Homepage from './Components/Pages/Homepage/Homepage';
 import MovieList from './Components/MovieLists/MovieList';
 import MovieDetails from './Components/Pages/MovieDetails/MovieDetails';
+// import "slick-carousel/slick/slick.css"; 
+// import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (

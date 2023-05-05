@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import styles from "../../MovieCard/Card.module.css";
 import styles from "./MovieDetails.module.css";
+import HorizontalList from "../../MovieHorizontalList/HorizontalList";
+// import styles from "../../MovieCard/Card.module.css";
 
 export default function MovieDetails() {
   const [movie, setMovie] = useState();
@@ -49,6 +50,11 @@ export default function MovieDetails() {
     const newDate = date.split("-");
     const monthName = months[parseInt(newDate[1])];
     return `${monthName} ${newDate[2]}, ${newDate[0]}`;
+  }
+
+  // Getting formatted currency
+  const getFormattedCurrency = (num) => {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
   }
 
   return (
@@ -124,8 +130,9 @@ export default function MovieDetails() {
              
             {/* Details table */}
             <div className={styles.aboutMovie}>
-              <div className={styles.overViewHeading}>
+              <div className={styles.overviewHeading}>
                 <h1>Overview</h1>
+                {/* <hr /> */}
                 <p className={styles.description}>
                   {movie ? movie.overview : ""}
                 </p>
@@ -149,13 +156,13 @@ export default function MovieDetails() {
                     <tr>
                       <td className={styles.tableHeading}>Budget</td>
                       <td className={styles.tableData}>
-                        ${movie ? movie.budget : ""}
+                        ${getFormattedCurrency(movie ? movie.budget : "")}
                       </td>
                     </tr>
                     <tr>
                       <td className={styles.tableHeading}>Revenue</td>
                       <td className={styles.tableData}>
-                        ${movie ? movie.revenue : ""}
+                        ${getFormattedCurrency(movie ? movie.revenue : "")}
                       </td>
                     </tr>
                     <tr>
@@ -182,6 +189,11 @@ export default function MovieDetails() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div>
+          {/* <MovieSlider /> */}
+          <HorizontalList />
         </div>
       </div>
     </>
